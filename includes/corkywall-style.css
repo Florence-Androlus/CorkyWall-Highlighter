@@ -1,0 +1,270 @@
+/* Design for the <figure> wrapper. */
+.wp-block-image.is-style-scotch-tape {
+	position:         relative;
+	overflow:         visible;
+	padding:          1rem;
+	background-color: #fff;
+	box-shadow:       0 4px 10px 0 rgba( 0, 0, 0, 0.3 ),
+	                  0 0 4rem rgba( 255, 255, 235, 0.5 ) inset;
+	width: fit-content;
+}
+
+/* Design for the "tape". */
+.wp-block-image.is-style-scotch-tape::before {
+	content:    "";
+	display:    block;
+	position:   absolute;
+	width:      7rem;
+	height:     2rem;
+	margin:     auto auto auto -3.5rem;
+	z-index:    1;
+	left:       50%;
+	top:        -0.5rem;
+	background: rgba( 255, 255, 235, 0.5 );
+	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
+}
+
+/* Remove TT2's image shadow. */
+.wp-block-image.is-style-scotch-tape img {
+	box-shadow: none;
+}
+
+/* Adjustments for the caption. */
+.wp-block-image.is-style-scotch-tape figcaption {
+	display:     block;
+	margin:      1rem 0 0;
+	line-height: 1;
+	font-size:   1rem;
+	}
+
+.wp-block-image[class*=is-style-polaroid] img {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px  10px 0 rgba( 0, 0, 0, 0.3 ),
+                0 0 4rem rgba( 255, 255, 235, 0.5 ) inset;
+}
+
+.wp-block-image[class*=is-style-polaroid] figcaption {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.wp-block-image.is-style-polaroid-tilt-right {
+    transform: scale( 0.99, 0.99 ) rotate( 2deg );
+}
+
+.wp-block-image.is-style-polaroid-tilt-left {
+    transform: scale( 0.99, 0.99 ) rotate( -2deg );
+}
+
+/* faire bouger sur hover */
+.wp-block-image[class*=is-style-polaroid-tilt] {
+    transition: all 0.5s ease-in-out;
+}
+
+.wp-block-image[class*=is-style-polaroid-tilt]:hover {
+    transform: scale( 1, 1 ) rotate( 0 );
+}
+
+.wp-block-image.is-style-scotch-tape {
+	position:         relative;
+	overflow:         visible;
+	padding:          1rem;
+	background-color: #fff;
+	box-shadow:       0 4px 10px 0 rgba( 0, 0, 0, 0.3 ),
+	                  0 0 4rem rgba( 255, 255, 235, 0.5 ) inset;
+	width: fit-content;
+}
+
+
+/* Design for the "tape" tilt et scotch. */
+.wp-block-image.is-style-polaroid-tilt-right-scotch {
+	position:         relative;
+	overflow:         visible;
+	padding:          1rem;
+	background-color: #fff;
+	box-shadow:       0 4px 10px 0 rgba( 0, 0, 0, 0.3 ),
+	                  0 0 4rem rgba( 255, 255, 235, 0.5 ) inset;
+	width: fit-content;
+}
+.wp-block-image.is-style-polaroid-tilt-right-scotch::before {
+	content:    "";
+	display:    block;
+	position:   absolute;
+	width:      7rem;
+	height:     2rem;
+	margin:     auto auto auto -3.5rem;
+	z-index:    1;
+	left:       50%;
+	top:        -0.5rem;
+	background: rgba( 255, 255, 235, 0.5 );
+	box-shadow: 0 4px 10px 0 rgba( 0, 0, 0, 0.3 );
+}
+
+/* Remove TT2's image shadow. */
+.wp-block-image.is-style-polaroid-tilt-right-scotch img {
+	box-shadow: none;
+}
+
+/* Adjustments for the caption. */
+.wp-block-image.is-style-polaroid-tilt-right-scotch figcaption {
+	display:     block;
+	margin:      1rem 0 0;
+	line-height: 1;
+	font-size:   1rem;
+	
+}
+
+.wp-block-image.is-style-polaroid-tilt-right-scotch {
+    transform: scale( 0.99, 0.99 ) rotate( 2deg );
+} 
+
+/* double scotch */
+.wp-block-image[class*=is-style-img-tape] {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 20px auto 10px;
+  
+  &:before,
+  &:after {
+    background: rgba(255,255,235,.6);
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    content: "";
+    display: block;
+    height: 30px;
+    position: absolute;
+    margin: auto;
+    width: 100px;
+  }
+
+  img {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    display: inline-block;
+    height: auto;
+    margin: 0 20px;
+    max-width: 100%;
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+  }
+}
+
+.wp-block-image.is-style-img-tape--1 {
+  &:before {
+    left: 50%;
+    margin-left: -50px;
+    top: -10px;
+  }
+
+  &:after {
+    left: 50%;
+    margin-left: -50px;
+    bottom: 25px;
+  }
+}
+
+.wp-block-image.is-style-img-tape--2 {
+  &:before {
+    left: 0;
+    top: 10px;
+    transform: rotate(-35deg);
+  }
+
+  &:after {
+    right: 0;
+    top: 15px;
+    transform: rotate(45deg);
+  }
+}
+
+.wp-block-image.is-style-img-tape--3 {
+  &:before {
+    left: 0;
+    top: 10px;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    bottom: 10px;
+    right: 0;
+    transform: rotate(-35deg);
+  }
+}
+
+.wp-block-image.is-style-img-tape--4 {
+  &:before {
+    left: -30px;
+    margin-top: -15px;
+    top: 50%;
+    transform: rotate(93deg);
+  }
+
+  &:after {
+    margin-top: -30px;
+    right: -30px;
+    top: 50%;
+    transform: rotate(89deg);
+  }
+}
+
+/* pins vert */ 
+.wp-block-image.is-style-pins-vert:before {background:url(./pins-vert.png);}
+.wp-block-image.is-style-pins-bleu:before {background:url(./pins-bleu.png);}
+.wp-block-image.is-style-pins-orange:before {background:url(./pins-orange.png);}
+
+.wp-block-image.is-style-pins-vert {  transform: translate(-0%) rotate(0deg); }
+.wp-block-image.is-style-pins-bleu {   transform:  rotate(-5deg); transform-origin: 50% 0%;}
+.wp-block-image.is-style-pins-orange {  transform: rotate(5deg); transform-origin: 50% 0%; }
+
+@media screen and (max-width:690px) {
+   
+.wp-block-image.is-style-pins-vert {    transform: translate(-0%) rotate(0deg); } 
+.wp-block-image.is-style-pins-bleu {   transform:  rotate(-5deg);transform-origin: 50% 0%; }
+.wp-block-image.is-style-pins-orange {  transform: rotate(5deg); transform-origin: 50% 0%; }	
+    
+}
+
+.wp-block-image[class*=is-style-pins]  {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 20px auto 10px;
+  
+  &:before {  position: relative;
+    margin-bottom: -25px;
+    margin-left: 50%;
+    content: '';
+    display: block;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+	  z-index: 1;}
+  &:after {
+   
+  }
+
+  img {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+  }
+}
+.wp-block-image[class*=is-style-pins] {
+    transition: all 0.5s ease-in-out;
+}
+
+.wp-block-image[class*=is-style-pins]:hover {
+    transform: scale( 1, 1 ) rotate( 0 );
+}
+ 
+
+

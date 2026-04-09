@@ -1,0 +1,109 @@
+/*
+Plugin Name: Cap Plugins
+Description: Cap plugins image deco
+Author: Carole Petithomme
+Version: 1.0
+*/
+ 
+/* stabilo jaune sur balise mark  : il faut mettre class 'stab' sur le paragraphe, passer en html pour rajouter la balise <mark class="yellow"> autour du texte à stabilossé*/
+@keyframes mark {
+  to {
+    background-position: -100%;
+  } 
+}
+
+p .stab{
+  isolation: isolate;
+}
+
+mark {
+ margin: 0 -0.3em;
+  padding: 0.1em 0.4em;
+  border-radius: 1em 0.3em 0.8em 0.3em;
+  background: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-blend-mode: multiply;
+  mix-blend-mode: multiply;
+  animation: mark linear 1s forwards;
+}
+
+/*le test pour le mark wp*/
+.is-style-yellow mark {
+  background: 0 0 !important;
+  background: linear-gradient(
+    to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  )!important;
+  background-position: 0!important;
+  /*make the background twice as big*/
+  background-size: 200%!important;
+}
+
+.blue {
+  background: 0 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(0, 20, 255, 0.2),
+    rgba(0, 20, 255, 0.7) 95%,
+    rgba(0, 20, 255, 0.1)
+  );
+  background-position: 0;
+  /*make the background twice as big*/
+  background-size: 200%;
+}
+
+.red {
+  background: 0 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(255, 20, 0, 0.2),
+    rgba(255, 20, 0, 0.7) 95%,
+    rgba(255, 20, 0, 0.1)
+  );
+  background-position: 0;
+  /*make the background twice as big*/
+  background-size: 200%;
+}
+
+.green {
+  background: 0 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(0, 255, 20, 0.2),
+    rgba(0, 255, 20, 0.7) 95%,
+    rgba(0, 255, 20, 0.1)
+  );
+  background-position: 0;
+  /*make the background twice as big*/
+  background-size: 200%;
+}
+.purple {
+  background: 0 0;
+  background-image: linear-gradient(
+    -100deg,
+    rgba(106, 24, 133, 0.2),
+    rgba(106, 24, 133, 0.7) 95%,
+    rgba(106, 24, 133, 0.1)
+  );
+  background-position: 0;
+  /*make the background twice as big*/
+  background-size: 200%;
+}
+
+.components-circular-option-picker__option-wrapper:before {
+  background-image: none !important;
+  /* Autres styles du pseudo-élément ::before ici */
+}
+
+/* Uniquement le color picker dans l'onglet Fluo */
+#tab-fluo-view .components-color-picker {
+    position: relative !important;
+}
+
+#tab-fluo-view .components-popover {
+    position: fixed !important;
+    z-index: 1000000 !important;
+}
