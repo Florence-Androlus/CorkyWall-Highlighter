@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-CorkyWall & Highlighter is a WordPress Gutenberg plugin that integrates three decorative tools into your layout: pin images like on a corkboard, tape them with a realistic tape effect, and highlight your text with sublime color gradients.
+CorkyWall & Highlighter est un plugin WordPress Gutenberg qui intègre trois outils décoratifs à votre mise en page : épingler des images comme sur un tableau de liège, les scotcher avec un effet de ruban adhésif réaliste et mettre en valeur votre texte avec de sublimes dégradés de couleurs.
 
 == Description ==
 
