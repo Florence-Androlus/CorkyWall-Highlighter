@@ -12,11 +12,13 @@ function getSelectedText() {
 
 function findMarkElement(range) {
     var start = range.startContainer;
+    // On vérifie si le parent est une balise MARK ET possède ta classe
     if (start.nodeType === 3) {
-        return start.parentNode.nodeName === 'MARK' ? start.parentNode : null;
+        var parent = start.parentNode;
+        return (parent.nodeName === 'MARK' && parent.classList.contains('corky-highlighter')) ? parent : null;
     }
     var next = start.childNodes[range.startOffset];
-    return next && next.nodeName === 'MARK' ? next : null;
+    return (next && next.nodeName === 'MARK' && next.classList.contains('corky-highlighter')) ? next : null;
 }
 
 function updateBlockContent(clientId, selectedText, color) {
@@ -29,7 +31,7 @@ function updateBlockContent(clientId, selectedText, color) {
     var range = sel.getRangeAt(0);
 
     // Nettoie d'abord toutes les marks vides parasites
-    blockElement.querySelectorAll('mark').forEach(function(m) {
+    blockElement.querySelectorAll('mark.corky-highlighter').forEach(function(m) {
         if (m.textContent.trim() === '') {
             var parent = m.parentNode;
             parent.removeChild(m);
@@ -39,7 +41,7 @@ function updateBlockContent(clientId, selectedText, color) {
 
     // Cherche une mark existante qui contient le texte sélectionné
     var markElement = null;
-    blockElement.querySelectorAll('mark').forEach(function(m) {
+    blockElement.querySelectorAll('mark.corky-highlighter').forEach(function(m) {
         if (m.textContent === selectedText || sel.containsNode(m, true)) {
             markElement = m;
         }
@@ -70,6 +72,8 @@ function updateBlockContent(clientId, selectedText, color) {
         // On extrait le contenu SANS le supprimer d'abord
         var fragment = range.extractContents();
         var mark = iframeDoc.createElement('mark');
+        // AJOUTE CETTE LIGNE ICI :
+        mark.classList.add('corky-highlighter');
         mark.style.background = color;
         // Récupère juste le texte du fragment (évite les nodes imbriqués)
         mark.textContent = fragment.textContent;
